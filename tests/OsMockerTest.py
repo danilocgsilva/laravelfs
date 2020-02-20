@@ -26,6 +26,21 @@ class OsMockerTest(unittest.TestCase):
     def testReturnCorrectNameForLinux(self):
         self.osMocker.setSystem('linux')
         self.assertEqual('posix', self.osMocker.name)
+
+
+    def testSeparatorForWindows(self):
+        self.osMocker.setSystem('windows')
+        self.assertEqual('\\', self.osMocker.sep)
+
+
+    def testSeparatorForMac(self):
+        self.osMocker.setSystem('mac')
+        self.assertEqual('/', self.osMocker.sep)
+
+
+    def testSeparatorForMac(self):
+        self.osMocker.setSystem('linux')
+        self.assertEqual('/', self.osMocker.sep)
         
 
 if __name__ == '__main__':

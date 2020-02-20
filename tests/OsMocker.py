@@ -8,12 +8,15 @@ class OsMocker:
             raise Exception('No allowed system to inject to mock!')
 
         if system == 'windows':
+            self.sep = '\\'
             self.name = 'nt'
 
         if system == 'mac':
+            self.sep = '/'
             self.name = 'darwin'
 
         if system == 'linux':
+            self.sep = '/'
             self.name = 'posix'
 
 
