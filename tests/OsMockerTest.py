@@ -15,17 +15,17 @@ class OsMockerTest(unittest.TestCase):
 
     def testReturnCorrectNameForWindows(self):
         self.osMocker.setSystem('windows')
-        self.assertEquals('nt', self.osMocker.name)
+        self.assertEqual('nt', self.osMocker.name)
 
 
     def testReturnCorrectNameForMac(self):
         self.osMocker.setSystem('mac')
-        self.assertEquals('darwin', self.osMocker.name)
+        self.assertEqual('darwin', self.osMocker.name)
 
 
     def testReturnCorrectNameForLinux(self):
         self.osMocker.setSystem('linux')
-        self.assertEquals('posix', self.osMocker.name)
+        self.assertEqual('posix', self.osMocker.name)
         
 
 if __name__ == '__main__':
