@@ -1,13 +1,6 @@
-class Install:
+from src.Install import Install
+import os
 
-    def getInstallingPath(self):
-        if self.os.name == 'nt':
-            return 'C:' + self.os.sep + 'Windows'
-        if self.os.name == 'darwin':
-            return self.os.sep + 'usr' + self.os.sep + 'local' + self.os.sep + 'bin'
-        if self.os.name == 'posix':
-            return self.os.sep + 'usr' + self.os.sep + 'local' + self.os.sep + 'bin'
-        
-
-    def setOs(self, os):
-        self.os = os
+install = Install()
+install.setOs(os)
+installingPath = install.getInstallingPath()

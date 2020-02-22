@@ -2,7 +2,7 @@ import unittest
 import sys
 from OsMocker import OsMocker
 sys.path.append('..')
-from Install import Install
+from src.Install import Install
 
 class InstallTest(unittest.TestCase):
 
@@ -12,25 +12,25 @@ class InstallTest(unittest.TestCase):
         self.osMocker = OsMocker()
 
 
-    def testGetInstallingPathForWindows(self):
+    def testGetExecutablePathForWindows(self):
 
         self.osMocker.setSystem('windows')
         self.install.setOs(self.osMocker)
 
-        windowsPath = "C:/Windows"
-        self.assertEqual(windowsPath, self.install.getInstallingPath())
+        windowsPath = "C:\Windows"
+        self.assertEqual(windowsPath, self.install.getExecutablePath())
 
 
-    def testGetInstallingPathForMac(self):
+    def testGetExecutablePathForMac(self):
 
         self.osMocker.setSystem('mac')
         self.install.setOs(self.osMocker)
 
         macPath = "/usr/local/bin"
-        self.assertEqual(macPath, self.install.getInstallingPath())
+        self.assertEqual(macPath, self.install.getExecutablePath())
 
 
-    def testGetInstallingPathForLinux(self):
+    def testGetExecutablePathForLinux(self):
 
         self.osMocker.setSystem('linux')
         self.install.setOs(self.osMocker)
@@ -38,9 +38,9 @@ class InstallTest(unittest.TestCase):
         linuxPath = "/usr/local/bin"
 
         print(linuxPath)
-        print(self.install.getInstallingPath())
+        print(self.install.getExecutablePath())
 
-        self.assertEqual(linuxPath, self.install.getInstallingPath())
+        self.assertEqual(linuxPath, self.install.getExecutablePath())
 
 
 
