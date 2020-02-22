@@ -1,10 +1,10 @@
 from OsMocker import OsMocker
 import unittest 
 
-class OsMockerTest(unittest.TestCase):
+class test_OsMocker(unittest.TestCase):
 
     def __init__(self, *args, **kwargs):
-        super(OsMockerTest, self).__init__(*args, **kwargs)
+        super(test_OsMocker, self).__init__(*args, **kwargs)
         self.osMocker = OsMocker()
 
 
